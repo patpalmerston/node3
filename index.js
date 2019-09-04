@@ -1,4 +1,5 @@
-// manage products
-// manage clients
-// manage orders
-// manage suppliers
+const server = require('./api/server');
+
+const port = 8000;
+
+server.listen(port, () => console.log(`\n** API on port ${port} **\n`));
