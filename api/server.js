@@ -9,10 +9,10 @@ server.get('/', (req, res) => {
 // manage products
 server.get('/products', (req, res) => {});
 // manage clients
-server.get('/products', (req, res) => {});
+server.get('/clients', (req, res) => {});
 // manage orders
-server.get('/products', (req, res) => {});
+server.get('/orders', (req, res) => {});
 // manage suppliers
-server.get('/products', (req, res) => {});
+server.get('/suppliers', (req, res) => {});
 
 module.exports = server;
