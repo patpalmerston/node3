@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
 	res.send('we are getting /Suppliers/');
 });
 
-router.get('/name', (req, res) => {
+router.get('/:name', (req, res) => {
   const { name } = req.params;
   console.log(req.params.name)
 	res.send(`get to /products/${name}`);
