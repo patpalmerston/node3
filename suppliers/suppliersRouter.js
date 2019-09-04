@@ -7,6 +7,16 @@ const router = express.Router();
 // a router can have middleware that applies on to the router
 router.use(express.json());
 
+function uppercase(req, res, next) {
+	let name = req.params.name;
+
+	if (name) {
+		req.name = name.toUpperCase();
+	}
+	// res.send(`the name is: ${name}`)
+	next();
+}
+
 // this router handles urls that begin with /products
 
 // GET to /products/
@@ -14,10 +24,8 @@ router.get('/', (req, res) => {
 	res.send('we are getting /Suppliers/');
 });
 
-router.get('/:name', (req, res) => {
-  const { name } = req.params;
-  console.log(req.params.name)
-	res.send(`get to /products/${name}`);
+router.get('/:name', uppercase, (req, res) => {
+	res.send(`get to /products/${req.name}`);
 });
 
 module.exports = router;
